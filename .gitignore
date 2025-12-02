@@ -4,3 +4,8 @@ build/*
 out/*
 .gradle/*
 target/*
+/target/
+.classpath
+.project
+.settings/
+doc/
