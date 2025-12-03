@@ -1,5 +1,8 @@
 package com.github.rayanel8.kata.tondeuse.domain.model;
 
+/**
+ * Immutable value object representing a coordinate on the lawn grid.
+ */
 public class Position {
 	private final int x;
 	private final int y;

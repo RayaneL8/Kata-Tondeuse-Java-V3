@@ -22,7 +22,29 @@ public class FileParser {
 	private static final int INDEX_POSITION_Y = 1;
 	private static final int INDEX_ORIENTATION = 2;
 
-	// Stockage des données de la tondeuse pour traitement ultérieur
+	/**
+	 * Parses an input file describing the lawn dimensions and the initial
+	 * configuration of each mower (position, orientation and instruction list).
+	 * <p>
+	 * Expected file format:
+	 * <ul>
+	 * <li>First line: the lawn dimensions {@code maxX maxY}</li>
+	 * <li>Then, for each mower:</li>
+	 * <li>Line N: initial position and orientation {@code x y O}</li>
+	 * <li>Line N+1: instruction string</li>
+	 * </ul>
+	 * <p>
+	 * For each mower, its position, orientation and instruction sequence are
+	 * extracted and stored so they can be processed later by the simulation logic.
+	 *
+	 * @param fileName the path to the input file to be parsed
+	 * @return a {@link ParsedInput} object containing:
+	 *         <ul>
+	 *         <li>the lawn dimensions</li>
+	 *         <li>a list of {@link MowerData} objects describing each mower</li>
+	 *         </ul>
+	 *         d
+	 */
 	public ParsedInput parse(String fileName) throws IOException {
 		List<String> lines = Files.readAllLines(Path.of(fileName));
 
